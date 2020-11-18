@@ -125,7 +125,15 @@ module.exports = {
       },
       {
         test: /\.s[ac]ss$/,
-        use: cssLoaders(["sass-loader"]),
+        use: cssLoaders([
+          "resolve-url-loader",
+          {
+            loader: "sass-loader",
+            options: {
+              sourceMap: true,
+            },
+          },
+        ]),
       },
       {
         test: /\.(png|jpg|jpeg|svg|gif)$/,
