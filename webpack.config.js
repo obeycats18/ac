@@ -6,11 +6,10 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const MiniCSSExtractWebpackPugin = require("mini-css-extract-plugin");
 const TerserWebpackPlugin = require("terser-webpack-plugin");
 const OptimizeCSSWebpackPlugin = require("optimize-css-assets-webpack-plugin");
-const CriticalCssWebpackPlugin = require("critical-css-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 const isDevelopment = process.env.NODE_MODE === "development";
-const isProduction = !isDevelopment;
+const isProduction = process.env.NODE_MODE === "production";
 
 /* Setup Dev Server for development on port: env.DEV_SERVER_PORT or 3000 */
 const setupDevServer = () => {
@@ -29,6 +28,13 @@ const setupOptimization = () => {
   const defaultConfig = {
     splitChunks: {
       chunks: "all",
+      cacheGroups: {
+        vendors: {
+          test: /[\\/]node_modules[\\/]/,
+          name: "vendors",
+          chunks: "all",
+        },
+      },
     },
   };
 
@@ -62,7 +68,6 @@ const cssLoaders = (extra) => {
   return loaders;
 };
 
-/* Setup Plugins with CriticalCssWebpackPlugin on production */
 const setupPlugins = () => {
   let defaultPlugins = [
     new HtmlWebpackPlugin({
@@ -75,8 +80,8 @@ const setupPlugins = () => {
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: path.resolve(__dirname, "src/assets"),
-          to: path.resolve(__dirname, "dist/assets"),
+          from: path.resolve(__dirname, "src/assets/images"),
+          to: path.resolve(__dirname, "dist/assets/images"),
         },
       ],
     }),
@@ -84,26 +89,6 @@ const setupPlugins = () => {
       filename: "index.css",
     }),
   ];
-
-  if (isProduction) {
-    defaultPlugins = [
-      ...defaultPlugins,
-      new CriticalCssWebpackPlugin({
-        base: path.resolve(__dirname, "dist"),
-        src: "index.html",
-        target: "index.css",
-        inline: true,
-        minify: true,
-        extract: true,
-        width: 768,
-        height: 627,
-        concurrency: 4,
-        penthouse: {
-          blockJSRequests: false,
-        },
-      }),
-    ];
-  }
 
   return defaultPlugins;
 };
@@ -113,7 +98,10 @@ module.exports = {
   entry: "./index.js",
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: isDevelopment ? "index.[contenthash].js" : "index.js",
+    filename: "[name].[contenthash].js",
+  },
+  performance: {
+    maxAssetSize: 249856,
   },
   optimization: setupOptimization(),
   devServer: setupDevServer(),
@@ -125,23 +113,24 @@ module.exports = {
       },
       {
         test: /\.s[ac]ss$/,
-        use: cssLoaders([
-          "resolve-url-loader",
+        use: cssLoaders(["resolve-url-loader", "sass-loader"]),
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        use: [
           {
-            loader: "sass-loader",
-            options: {
-              sourceMap: true,
-            },
+            loader: "file-loader",
+            options: {},
           },
-        ]),
+        ],
       },
       {
-        test: /\.(png|jpg|jpeg|svg|gif)$/,
-        use: ["file-loader"],
-      },
-      {
-        test: /\.(ttf|eot|woff|woff2)$/,
-        use: ["file-loader"],
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        loader: "file-loader",
+        options: {
+          outputPath: "assets/fonts",
+          name: "[name].[ext]",
+        },
       },
     ],
   },
