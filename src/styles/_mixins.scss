@@ -1,0 +1,14 @@
+@mixin h3 {
+  font-weight: $h3-fw;
+  font-size: $h3-fs;
+}
+
+@mixin caption {
+  font-weight: $p-fw;
+  font-size: $caption-fs;
+}
+
+@mixin paragraph {
+  font-weight: $p-fw;
+  font-size: $p-fs;
+}
