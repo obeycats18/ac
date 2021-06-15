@@ -5,7 +5,12 @@
 .link {
   position: relative;
 
-  @include caption;
+  font-weight: 700;
+  font-size: $caption-fs;
+
+  &:hover:before {
+    width: 100%;
+  }
 
   &:before {
     content: "";
@@ -14,8 +19,10 @@
     bottom: -4px;
     left: 0;
 
-    width: 100%;
+    width: 0;
     height: 1px;
+
+    transition: width 0.25s ease;
   }
 }
 
@@ -28,6 +35,10 @@
 
   &:before {
     background-color: $accent-color;
+  }
+
+  &:hover {
+    color: #de1e1c;
   }
 }
 

@@ -1,14 +1,32 @@
 @import "fonts";
 @import "variables";
 
-@import "_mixins";
-@import "_base";
+@import "mixins";
+@import "base";
+@import "grid";
 
 // --------------------------------------------------------------------------
 // Components
 // --------------------------------------------------------------------------
 
 @import "./components/buttons";
+@import "./components/link";
+@import "./components/select";
+@import "./components/calendar";
+@import "./components/tag";
+
+// --------------------------------------------------------------------------
+// Partials
+// --------------------------------------------------------------------------
+
+@import "./patials/header";
+@import "./patials/risks";
+@import "./patials/checkout";
+@import "./patials/programs";
+@import "./patials/seo-text";
+@import "./patials/faq";
+@import "./patials/contact";
+@import "./patials/footer";
 
 * {
   padding: 0;

@@ -1,0 +1,128 @@
+.select {
+  width: 100%;
+  position: relative;
+
+  // --------------------------------------------------------------------------
+  // Select Input
+  // --------------------------------------------------------------------------
+
+  &__input {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 1rem;
+    height: 48px;
+
+    box-shadow: $input-shadow;
+    background: #ffffff;
+    border-radius: $input-br;
+    cursor: pointer;
+
+    &-icon {
+      transform: rotate(0);
+
+      transition: transform 0.25s ease;
+
+      &--active {
+        transform: rotate(-180deg);
+      }
+    }
+  }
+
+  // --------------------------------------------------------------------------
+  // Select Dropdown
+  // --------------------------------------------------------------------------
+
+  &__dropdown {
+    position: absolute;
+    top: 100%;
+
+    width: 100%;
+    max-height: 280px;
+
+    padding: 1rem 1rem 1.75rem 1rem;
+
+    border-bottom-right-radius: $input-br;
+    border-bottom-left-radius: $input-br;
+
+    background-color: #fff;
+    overflow-y: auto;
+    box-shadow: $input-shadow;
+
+    transform-origin: center top;
+    transform: scale(0);
+    opacity: 0;
+
+    transition: transform 0.25s ease, opacity 0.25s ease;
+
+    &::-webkit-scrollbar {
+      width: 20px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+      width: 20px;
+      background-color: #fff;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      border-radius: 8px;
+      background: rgba(231, 45, 43, 0.5);
+      border: 8px solid #fff;
+    }
+
+    // --------------------------------------------------------------------------
+    // Select Dropdown Opened
+    // --------------------------------------------------------------------------
+
+    &--active {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    // --------------------------------------------------------------------------
+    // Select Checkbox
+    // --------------------------------------------------------------------------
+
+    .select__checkbox {
+      width: 16px;
+      height: 16px;
+
+      margin-right: 0.5rem;
+
+      background: transparent;
+      border-radius: 50%;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+
+      transition: border-color 0.25s ease, border-width 0.25s ease;
+
+      // --------------------------------------------------------------------------
+      // Select Checked
+      // --------------------------------------------------------------------------
+
+      &--active {
+        border-width: 2px;
+        border-color: $accent-color;
+      }
+    }
+
+    // --------------------------------------------------------------------------
+    // Select Dropdown Item
+    // --------------------------------------------------------------------------
+
+    &-item {
+      display: flex;
+      align-items: center;
+
+      margin-bottom: 1rem;
+
+      cursor: pointer;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

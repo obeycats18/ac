@@ -1,0 +1,127 @@
+.section-faq {
+  position: relative;
+  z-index: 2;
+
+  padding-top: 120px;
+
+  .section-title {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .col-11,
+  .col-1 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  // --------------------------------------------------------------------------
+  // FAQ List
+  // --------------------------------------------------------------------------
+
+  .faq-list {
+    &__item--active {
+      .faq-list__item--visible {
+        .question {
+          color: $accent-color;
+        }
+      }
+      .faq-list__item--hidden {
+        margin-top: 1.5rem;
+        opacity: 1;
+        z-index: 1;
+        .answer {
+          opacity: 1;
+        }
+      }
+      .faq-list__item-button:before {
+        width: 0;
+      }
+    }
+    &__item {
+      align-items: center;
+      padding: 32px 0;
+
+      border: 1px solid #f0f0f0;
+      border-right: none;
+      border-left: none;
+
+      &:hover {
+        cursor: pointer;
+        .question {
+          color: $accent-color;
+        }
+      }
+
+      .question {
+        color: $text-color;
+
+        transition: color 0.25s ease;
+        .index {
+          color: $gray-text-color;
+        }
+      }
+
+      .answer {
+        opacity: 0;
+
+        transition: opacity 0.25s ease;
+      }
+
+      &--visible {
+        align-items: center;
+
+        .col-1 {
+          display: flex;
+          justify-content: flex-end;
+        }
+      }
+
+      &--hidden {
+        margin-top: 0;
+        height: 0;
+
+        opacity: 0;
+        z-index: -1;
+
+        transition: height 0.25s linear;
+      }
+
+      // --------------------------------------------------------------------------
+      // FAQ List Item Button
+      // --------------------------------------------------------------------------
+
+      &-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        position: relative;
+        width: 40px;
+        height: 40px;
+
+        background-color: transparent;
+        border-radius: 50%;
+        border: 2px solid $gray-text-color;
+
+        &:before,
+        &:after {
+          content: "";
+
+          position: absolute;
+          width: 12px;
+          height: 2px;
+
+          border-radius: 1px;
+          background-color: $gray-text-color;
+
+          transition: width 0.25s ease;
+        }
+
+        &:before {
+          transform: rotate(90deg);
+        }
+      }
+    }
+  }
+}

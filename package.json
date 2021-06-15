@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "homepage": "http://obeycats18.github.io/ac-test",
   "scripts": {
     "build": "cross-env NODE_MODE=production webpack-cli --mode production",
     "watch": "cross-env NODE_MODE=development webpack-cli --mode development --watch",
-    "dev": "cross-env NODE_MODE=development DEV_SERVER_PORT=3000 webpack serve"
+    "dev": "cross-env NODE_MODE=development DEV_SERVER_PORT=3000 webpack serve",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
     "autoprefixer": "^10.0.2",
@@ -22,17 +25,18 @@
     "postcss": "^8.1.7",
     "postcss-loader": "^4.0.4",
     "postcss-preset-env": "^6.7.0",
+    "resolve-url-loader": "^3.1.2",
     "sass-loader": "^10.1.0",
     "style-loader": "^2.0.0",
     "stylelint": "^13.7.2",
     "terser-webpack-plugin": "^5.0.3",
+    "url-loader": "^4.1.1",
     "webpack": "^5.24.2",
     "webpack-cli": "^4.2.0",
-    "webpack-dev-server": "^3.11.0",
-    "resolve-url-loader": "^3.1.2",
-    "url-loader": "^4.1.1"
+    "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
-    "cross-env": "^7.0.2"
+    "cross-env": "^7.0.2",
+    "gsap": "^3.6.1"
   }
 }
