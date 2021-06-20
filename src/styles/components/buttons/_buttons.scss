@@ -1,0 +1,62 @@
+// --------------------------------------------------------------------------
+// Button Link
+// --------------------------------------------------------------------------
+
+.button--link {
+  display: flex;
+  align-items: center;
+
+  @include paragraph;
+  color: $accent-color;
+
+  background-color: transparent;
+  border: none;
+
+  transition: color 0.25s ease;
+
+  &__icon {
+    margin-left: 8px;
+
+    transition: color 0.25s ease;
+  }
+
+  &:hover {
+    color: $hovered-button-color;
+    .button--link__icon {
+      path {
+        fill: $hovered-button-color;
+      }
+    }
+  }
+}
+
+// --------------------------------------------------------------------------
+// Button Filled
+// --------------------------------------------------------------------------
+
+.button--filled {
+  max-width: 360px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 16px;
+
+  background-color: $accent-color;
+  color: #fff;
+  box-shadow: $main-button-shadow;
+
+  @include h3;
+
+  border: none;
+  border-radius: $main-button-br;
+
+  transition: background-color 0.25s ease;
+
+  &:hover {
+    background-color: $hovered-button-color;
+  }
+}
+
+@import "./buttons-media";

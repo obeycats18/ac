@@ -1,0 +1,62 @@
+// --------------------------------------------------------------------------
+// Media max-width: 768px -- Start
+// --------------------------------------------------------------------------
+
+@media screen and (max-width: 768px) {
+  .section-checkout {
+    .country-tags {
+      margin-top: 1.5rem;
+    }
+    .checkout-form__item {
+      margin-top: 2rem;
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+
+    &__bg {
+      width: 100%;
+
+      left: 0;
+    }
+
+    .select__dropdown-calendar {
+      left: -10%;
+    }
+  }
+}
+
+// --------------------------------------------------------------------------
+// Media max-width: 768px -- End
+// --------------------------------------------------------------------------
+
+// --------------------------------------------------------------------------
+// Media max-width: 425px -- Start
+// --------------------------------------------------------------------------
+
+@media screen and (max-width: 425px) {
+  .section-checkout {
+    padding-top: 5.375rem;
+    .country-tags {
+      display: none;
+    }
+    .checkout-form__item {
+      margin-top: 1rem;
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+
+    &__bg {
+      top: 2.5rem;
+    }
+
+    .select__dropdown-calendar {
+      left: -10%;
+    }
+  }
+}
+
+// --------------------------------------------------------------------------
+// Media max-width: 425px -- End
+// --------------------------------------------------------------------------

@@ -1,0 +1,32 @@
+// --------------------------------------------------------------------------
+// Media max-width: 425px -- Start
+// --------------------------------------------------------------------------
+
+@media screen and (max-width: 425px) {
+  .footer {
+    padding: 2.5rem 0;
+    .links,
+    .social-links {
+      margin-bottom: 2rem;
+    }
+    .copyright-text__col {
+      padding: 0;
+    }
+    .copyright-row {
+      margin-bottom: 2.5rem;
+    }
+    .footer-logotypes {
+      &__item {
+        margin-bottom: 1.5rem;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+// --------------------------------------------------------------------------
+// Media max-width: 425px -- End
+// --------------------------------------------------------------------------

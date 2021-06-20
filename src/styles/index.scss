@@ -2,31 +2,32 @@
 @import "variables";
 
 @import "mixins";
-@import "base";
-@import "grid";
+@import "base/base";
+@import "grid/grid";
 
 // --------------------------------------------------------------------------
 // Components
 // --------------------------------------------------------------------------
 
-@import "./components/buttons";
+@import "./components/buttons/buttons";
 @import "./components/link";
 @import "./components/select";
 @import "./components/calendar";
 @import "./components/tag";
+@import "./components/languages";
+@import "./components/footer/footer";
 
 // --------------------------------------------------------------------------
 // Partials
 // --------------------------------------------------------------------------
 
-@import "./patials/header";
-@import "./patials/risks";
-@import "./patials/checkout";
-@import "./patials/programs";
-@import "./patials/seo-text";
-@import "./patials/faq";
-@import "./patials/contact";
-@import "./patials/footer";
+@import "./patials/header/header";
+@import "./patials/risks/risks";
+@import "./patials/checkout/checkout";
+@import "./patials/programs/programs";
+@import "./patials/seo-text/seo-text";
+@import "./patials/faq/faq";
+@import "./patials/contact/contact";
 
 * {
   padding: 0;

@@ -1,7 +1,6 @@
 // --------------------------------------------------------------------------
 // Colors
 // --------------------------------------------------------------------------
-
 $accent-color: #e72d2b;
 $text-color: #1c2b39;
 $placholder-text-color: #495966;
@@ -33,10 +32,16 @@ $p-fw: 500;
 // --------------------------------------------------------------------------
 
 $h1-fs: 1.75rem;
-$h2-fs: 1.5rem;
-$h3-fs: 1.125rem;
+$h2-fs: 1rem;
+$h3-fs: 1rem;
 $caption-fs: 0.8rem;
 $p-fs: 0.9375rem;
+
+$h1-fs--mobile: 1.25rem;
+$h2-fs--mobile: 1rem;
+$h3-fs--mobile: 1rem;
+$caption-fs--mobile: 0.8125rem;
+$p-fs--mobile: 0.8125rem;
 
 // --------------------------------------------------------------------------
 // Box Shadows
@@ -44,6 +49,8 @@ $p-fs: 0.9375rem;
 
 $main-button-shadow: 0px 6px 20px -6px rgba(231, 45, 43, 0.5);
 $input-shadow: 0px 8px 40px -8px rgba(31, 31, 33, 0.1);
+$program-shadow: 0px 8px 40px -8px rgba(31, 31, 33, 0.1);
+$languages-shadow: 0px 4px 16px rgba(0, 0, 0, 0.08);
 
 // --------------------------------------------------------------------------
 // Backgrounds
@@ -57,6 +64,12 @@ $footer-bg: #1f1f21;
 // --------------------------------------------------------------------------
 
 $desktop-container: 1128px;
+$table-container: 680px;
+$mobile-container: 292px;
+
+$tablet-padding: 44px;
+$mobile-padding: 14px;
+
 $gutter-x: 1.5rem;
 
 // --------------------------------------------------------------------------

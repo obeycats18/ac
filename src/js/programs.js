@@ -1,54 +1,61 @@
 export const program = () => {
+  const PANE_CLASS_HOVERED = "program-pane--hovered";
+  const TAB_CLASS_HOVERED = "programs-pane--hovered";
+
+  const PANE_CLASS_ACTIVE = "program-pane--active";
+  const TAB_CLASS_ACTIVE = "programs-tabs__tab--active";
+
   const tabs = document.querySelectorAll('[data-el="tab"]');
-  const panes = document.querySelectorAll('[data-el="pane"]');
 
-  const hover = (pane, tab) => {
-    if (!pane || !tab) return;
+  const hover = (panes, tab) => {
+    if (!panes || !tab) return;
 
-    pane.classList.add("programs-pane--hovered");
-    tab.classList.add("programs-tabs__tab--hovered");
+    panes.forEach((pane) => pane.classList.add(PANE_CLASS_HOVERED));
+    tab.classList.add(TAB_CLASS_HOVERED);
   };
 
-  const unhover = (pane, tab) => {
-    if (!pane || !tab) return;
+  const unhover = (panes, tab) => {
+    if (!panes || !tab) return;
 
-    pane.classList.remove("programs-pane--hovered");
-    tab.classList.remove("programs-tabs__tab--hovered");
+    panes.forEach((pane) => pane.classList.remove(PANE_CLASS_HOVERED));
+    tab.classList.remove(TAB_CLASS_HOVERED);
   };
 
-  const select = (pane, tab) => {
-    if (!pane || !tab) return;
+  const select = (panes, tab) => {
+    if (!panes || !tab) return;
 
-    pane.classList.add("programs-pane--active");
-    tab.classList.add("programs-tabs__tab--active");
+    panes.forEach((pane) => pane.classList.add(PANE_CLASS_ACTIVE));
+    tab.classList.add(TAB_CLASS_ACTIVE);
   };
 
-  const unselect = (pane, tab) => {
-    if (!pane || !tab) return;
+  const unselect = (panes, tab) => {
+    if (!panes || !tab) return;
 
-    pane.classList.remove("programs-pane--active");
-    tab.classList.remove("programs-tabs__tab--active");
+    panes.forEach((pane) => pane.classList.remove(PANE_CLASS_ACTIVE));
+    tab.classList.remove(TAB_CLASS_ACTIVE);
   };
 
   tabs.forEach((tab) => {
     const tabID = tab.dataset.key;
-    const pane = document.querySelector(`[data-tab="${tabID}"]`);
+    const panes = document.querySelectorAll(`[data-tab="${tabID}"]`);
 
     tab.addEventListener("click", () => {
       document.querySelectorAll('[data-el="tab"]').forEach((el) => {
-        const pane = document.querySelector(`[data-tab="${el.dataset.key}"]`);
+        const panes = document.querySelectorAll(
+          `[data-tab="${el.dataset.key}"]`
+        );
 
-        unselect(pane, el);
+        unselect(panes, el);
       });
-      select(pane, tab);
+      select(panes, tab);
     });
 
     tab.addEventListener("mousemove", () => {
-      hover(pane, tab);
+      hover(panes, tab);
     });
 
     tab.addEventListener("mouseout", () => {
-      unhover(pane, tab);
+      unhover(panes, tab);
     });
   });
 };

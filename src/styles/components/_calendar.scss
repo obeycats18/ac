@@ -1,7 +1,8 @@
 .select__dropdown-calendar {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 
+  max-height: none;
   min-width: 584px;
   padding: 1rem;
   padding-bottom: 0.5rem;
@@ -89,13 +90,15 @@
         margin-left: 0;
       }
 
+      &--not-current.day--start,
+      &--not-current.day--end,
       &--start,
       &--end {
         background-color: $accent-color;
         color: #fff;
       }
 
-      &--rage {
+      &--range {
         color: $accent-color;
       }
 

@@ -1,0 +1,148 @@
+.section-program {
+  padding-bottom: 120px;
+  .section-title {
+    text-align: center;
+
+    margin-bottom: 2.5rem;
+  }
+
+  .row {
+    .col-6 {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  // --------------------------------------------------------------------------
+  // Program Pane
+  // --------------------------------------------------------------------------
+
+  .program-pane {
+    &--active,
+    &--hovered {
+      .program-pane__value {
+        color: $accent-color;
+      }
+    }
+  }
+
+  .programs-pane {
+    &__row {
+      display: flex;
+      align-items: center;
+
+      padding: 2rem 0;
+
+      border-bottom: 1px solid #f0f0f0;
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+
+    .program-pane {
+      &__item {
+        display: flex;
+        align-items: flex-end;
+
+        position: relative;
+      }
+
+      &__value {
+        text-align: center;
+      }
+
+      &__name {
+        color: $gray-text-color;
+      }
+
+      &__headline--price {
+        color: $gray-text-color;
+      }
+    }
+  }
+
+  // --------------------------------------------------------------------------
+  // Program Tooltip
+  // --------------------------------------------------------------------------
+
+  .program-pane__info {
+    position: relative;
+    cursor: pointer;
+    margin-left: 4px;
+
+    &:hover {
+      .program-pane__tooltip {
+        transform: scale(1);
+      }
+    }
+  }
+
+  .program-pane__tooltip {
+    width: 150px;
+
+    position: absolute;
+    top: -100%;
+    left: 100%;
+
+    padding: 1rem;
+
+    background-color: #fff;
+    box-shadow: $input-shadow;
+    border-radius: $input-br;
+
+    transform: scale(0);
+
+    transition: transform 0.25s ease;
+  }
+
+  // --------------------------------------------------------------------------
+  // Program Tabs
+  // --------------------------------------------------------------------------
+
+  .programs-tabs {
+    &__tab {
+      .programs-tabs__tab-name {
+        transition: color 0.25s ease;
+      }
+
+      &:hover {
+        border-color: $accent-color;
+        .programs-tabs__tab-name {
+          color: $accent-color;
+        }
+      }
+
+      &--active,
+      &--hovered {
+        border-color: $accent-color;
+        .programs-tabs__tab-name {
+          color: $accent-color;
+        }
+      }
+
+      text-align: center;
+      padding-bottom: 24px;
+      border-bottom: 4px solid rgba(231, 45, 43, 0.2);
+
+      cursor: pointer;
+
+      transition: border-color 0.25s ease;
+    }
+  }
+
+  // --------------------------------------------------------------------------
+  // Program Actions
+  // --------------------------------------------------------------------------
+
+  .section-program__actions {
+    text-align: center;
+    margin-top: 4rem;
+
+    .button-checkout {
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+@import "./programs-media";

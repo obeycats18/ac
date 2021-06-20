@@ -1,0 +1,83 @@
+// --------------------------------------------------------------------------
+// Media max-width: 768px -- Start
+// --------------------------------------------------------------------------
+
+@media screen and (max-width: 768px) {
+  .section-risks {
+    margin-top: 2.5rem;
+    padding-bottom: 6.5rem;
+
+    &__container {
+      padding: 2.5rem;
+    }
+
+    &__image--tablet {
+      position: absolute;
+      bottom: 104px;
+      right: 40px;
+
+      width: 284px;
+      height: 274px;
+
+      overflow: hidden;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+// --------------------------------------------------------------------------
+// Media max-width: 768px -- End
+// --------------------------------------------------------------------------
+
+// --------------------------------------------------------------------------
+// Media max-width: 425px -- Start
+// --------------------------------------------------------------------------
+
+@media screen and (max-width: 425px) {
+  .section-risks {
+    margin-top: 3rem;
+    padding-bottom: 0;
+    background: linear-gradient(103.85deg, #1f1f21 -2.84%, #3c3c41 102.13%);
+    &__container {
+      padding: 0;
+      padding-top: 2.5rem;
+      background: none;
+    }
+
+    .section-risks__text {
+      padding-left: 0;
+    }
+
+    &__list {
+      &-item {
+        &__icon {
+          width: 32px;
+          height: 32px;
+        }
+        &__name {
+          font-size: $caption-fs;
+          margin-left: 0.5rem;
+        }
+      }
+    }
+
+    &__image--mobile {
+      height: 280px;
+
+      overflow: hidden;
+
+      img {
+        width: 100%;
+
+        margin-top: 1.5rem;
+      }
+    }
+  }
+}
+
+// --------------------------------------------------------------------------
+// Media max-width: 425px -- End
+// --------------------------------------------------------------------------

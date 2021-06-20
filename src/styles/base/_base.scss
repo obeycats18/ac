@@ -1,0 +1,99 @@
+// --------------------------------------------------------------------------
+// Headline Level 1
+// --------------------------------------------------------------------------
+
+.content__headline--h1 {
+  font-weight: $h1-fw;
+  font-size: $h1-fs;
+  line-height: 2.25rem;
+
+  &_main {
+    color: $text-color;
+  }
+
+  &_inverted {
+    color: #fff;
+  }
+}
+
+.content__headline--h2 {
+  font-weight: $h1-fw;
+  font-size: $h2-fs;
+  line-height: 2.25rem;
+
+  &_main {
+    color: $text-color;
+  }
+
+  &_accent {
+    color: $accent-color;
+  }
+}
+
+// --------------------------------------------------------------------------
+// Headline Level 3
+// --------------------------------------------------------------------------
+
+.content__headline--h3 {
+  font-weight: $h3-fw;
+  font-size: $h3-fs;
+  line-height: 1.5rem;
+
+  &_main {
+    color: $placholder-text-color;
+  }
+
+  &_inverted {
+    color: #fff;
+  }
+}
+
+// --------------------------------------------------------------------------
+// Paragraph
+// --------------------------------------------------------------------------
+
+.content__paragraph {
+  font-weight: $p-fw;
+  font-size: $p-fs;
+  line-height: 1.5rem;
+
+  &--main {
+    color: $placholder-text-color;
+  }
+
+  &--inverted {
+    color: #fff;
+  }
+
+  &--gray {
+    color: $gray-text-color;
+  }
+
+  &--accent {
+    color: $accent-color;
+  }
+}
+
+// --------------------------------------------------------------------------
+// Caption
+// --------------------------------------------------------------------------
+
+.content__caption {
+  font-weight: $p-fw;
+  font-size: $caption-fs;
+  line-height: 1.25rem;
+
+  &--inverted {
+    color: #fff;
+  }
+
+  &--main {
+    color: $text-color;
+  }
+
+  &--gray {
+    color: $gray-text-color;
+  }
+}
+
+@import "./base-media";

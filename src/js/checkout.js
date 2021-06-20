@@ -4,13 +4,21 @@ import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { select } from "./select";
 import { tags } from "./tags";
 
+import { Calendar } from "./Calendar/Calendar";
+
 gsap.registerPlugin(ScrollToPlugin);
 
 export const checkout = () => {
   const form = document.querySelector("#js-checkout-form");
   const inputs = Array.from(form.querySelectorAll("input"));
 
-  const onSelect = (value, name) => {
+  const calendar = new Calendar({
+    onSelect: ({ date }) => {
+      onSelectHandler(date, "date");
+    },
+  });
+
+  const onSelectHandler = (value, name) => {
     if (!value || !name) return;
 
     inputs.forEach((input) => {
@@ -30,6 +38,6 @@ export const checkout = () => {
     }
   };
 
-  select(onSelect);
-  tags(onSelect);
+  select(onSelectHandler);
+  tags(onSelectHandler);
 };

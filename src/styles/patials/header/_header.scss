@@ -1,0 +1,38 @@
+.header {
+  position: relative;
+
+  padding: 88px 0;
+  &__top-line {
+    margin-bottom: 2rem;
+  }
+  &__logo {
+    display: block;
+    width: 100%;
+
+    img {
+      width: 110%;
+    }
+  }
+  &__headline {
+    max-width: 522px;
+
+    font-size: 48px;
+    font-weight: $h1-fw;
+    color: $text-color;
+
+    margin-bottom: 0.5rem;
+  }
+  &__description {
+    margin-bottom: 24px;
+  }
+  &__map {
+    min-height: 472px;
+
+    img {
+      position: absolute;
+      right: 0;
+    }
+  }
+}
+
+@import "./header-media";

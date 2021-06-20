@@ -1,0 +1,136 @@
+.footer {
+  position: relative;
+  z-index: 1;
+
+  padding: 3rem 0 3.5rem 0;
+
+  background-color: $footer-bg;
+
+  a.links-name:hover {
+    text-decoration: underline;
+  }
+
+  .links-name,
+  a.links-name {
+    display: inline-block;
+    font-weight: 700;
+
+    margin-bottom: 1rem;
+  }
+
+  .col-3,
+  .col-6,
+  .col-5 {
+    padding-left: 0;
+  }
+
+  .links {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 2.5rem;
+    a.links-value {
+      position: relative;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    &-value {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  .links-viber {
+    margin-bottom: 1rem;
+  }
+
+  .links-viber,
+  .links-telegram {
+    font-weight: 700;
+    font-size: $caption-fs;
+    line-height: 1rem;
+
+    display: flex;
+    align-items: center;
+
+    color: $gray-text-color;
+
+    a {
+      color: #fff;
+
+      margin-right: 0.25rem;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  // --------------------------------------------------------------------------
+  // Footer Mobile App
+  // --------------------------------------------------------------------------
+
+  .footer-mobile-app {
+    &__list {
+      &-item {
+        display: inline-block;
+        height: 32px;
+        margin-right: 1rem;
+        img {
+          height: 100%;
+        }
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  // --------------------------------------------------------------------------
+  // Footer Socials Links
+  // --------------------------------------------------------------------------
+
+  .copyright-row {
+    margin-bottom: 4rem;
+    position: relative;
+
+    .copyright-text--mobile {
+      margin-top: 2.5rem;
+    }
+
+    .copyright-text:not(.copyright-text--mobile) {
+      position: absolute;
+      bottom: 0;
+    }
+  }
+
+  .social-links {
+    &__list {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+    &__item:nth-child(2) {
+      margin: 0 24px;
+    }
+
+    a {
+      svg {
+        path {
+          transition: fill 0.25s ease;
+        }
+      }
+
+      &:hover {
+        svg {
+          path {
+            fill: #fff;
+          }
+        }
+      }
+    }
+  }
+}
+
+@import "./footer-media";

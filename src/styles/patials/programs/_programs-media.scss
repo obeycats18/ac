@@ -1,0 +1,91 @@
+// --------------------------------------------------------------------------
+// Media max-width: 768px -- Start
+// --------------------------------------------------------------------------
+
+@media screen and (max-width: 768px) {
+  .section-program {
+    padding-bottom: 4rem;
+
+    .programs-pane__row:first-child {
+      .program-pane {
+        &__headline {
+          max-width: 180px;
+        }
+      }
+    }
+  }
+}
+
+// --------------------------------------------------------------------------
+// Media max-width: 768px -- End
+// --------------------------------------------------------------------------
+
+// --------------------------------------------------------------------------
+// Media max-width: 425px -- Start
+// --------------------------------------------------------------------------
+
+@media screen and (max-width: 425px) {
+  .section-program {
+    padding-bottom: 4rem;
+
+    .program-item {
+      padding: 2rem 1rem;
+      margin-bottom: 1.5rem;
+
+      background: #ffffff;
+      box-shadow: $program-shadow;
+      border-radius: $input-br;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &__name {
+        margin-bottom: 1.5rem;
+
+        text-align: center;
+      }
+
+      &__options {
+        &-item {
+          display: flex;
+          align-items: flex-end;
+          justify-content: space-between;
+
+          margin-bottom: 1rem;
+
+          &:last-child {
+            margin-bottom: 2.5rem;
+          }
+
+          &__name,
+          &__price {
+            font-weight: $h3-fw;
+          }
+
+          &__name {
+            max-width: 140px;
+          }
+
+          &__price {
+            min-width: 88px;
+
+            text-align: left;
+          }
+        }
+      }
+
+      &__actions {
+        text-align: center;
+
+        .button-checkout {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+}
+
+// --------------------------------------------------------------------------
+// Media max-width: 425px -- End
+// --------------------------------------------------------------------------
