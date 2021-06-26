@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Webpack Test</title>
   </head>
-  <body>
+  <body id="main">
     <!-- Header: Start -->
 
     <header class="header">
@@ -15,7 +15,7 @@
             <div class="col-2 col-md-2 col-sm-3">
               <a href="/" class="header__logo">
                 <img
-                  src="./assets/images/logo/AC-main.png"
+                  src="./assets/images/logo/AC-main.svg"
                   alt="Альфа Страхування"
                 />
               </a>
@@ -144,7 +144,7 @@
       </div>
 
       <!-- Header Promo: Start -->
-      <div class="container">
+      <div class="container header__promo">
         <div class="row ai-center">
           <div class="col-6 col-md-5 col-sm-6">
             <h1 class="header__headline">
@@ -942,6 +942,7 @@
             <div
               class="col-3 col-md-2 programs-tabs__tab"
               data-el="tab"
+              data-value="Base"
               data-key="1"
             >
               <h3
@@ -959,6 +960,7 @@
                 col-3 col-md-2
                 programs-tabs__tab programs-tabs__tab--active
               "
+              data-value="Premium"
               data-key="2"
               data-el="tab"
             >
@@ -1152,7 +1154,10 @@
 
         <div class="row jc-center">
           <div class="col-4 col-md-4 section-program__actions">
-            <button class="button--filled button-checkout">
+            <button
+              data-behavior="checkout"
+              class="button--filled button-checkout"
+            >
               Оформити поліс
             </button>
             <a href="#" class="link link--accent">Умови оферти</a>
@@ -1661,7 +1666,7 @@
                     content__headline--h3 content__headline--h3_main
                   "
                 >
-                  <span class="index">01.</span>Хто може бути застрахованим?
+                  <span class="index">01.</span> Хто може бути застрахованим?
                 </h3>
               </div>
               <div class="col-1 col-sm-1" data-el="faq-button">

@@ -1,0 +1,54 @@
+// --------------------------------------------------------------------------
+// Media max-width: 425px -- Start
+// --------------------------------------------------------------------------
+
+@media screen and (max-width: 425px) {
+  body#checkout {
+    .page-checkout {
+      padding-top: 0.5em;
+      padding-bottom: 4rem;
+
+      .row {
+        flex-direction: column-reverse;
+      }
+
+      .section-title {
+        max-width: 270px;
+
+        margin-bottom: 0.5rem;
+      }
+
+      &__form {
+        .field--checkbox {
+          font-size: $caption-fs--mobile;
+          line-height: 20px;
+        }
+      }
+
+      .price-block {
+        height: 356px;
+        padding: 2rem 1rem;
+
+        margin-bottom: 2.5rem;
+
+        &__title {
+          font-size: 20px;
+          line-height: 28px;
+
+          margin-bottom: 1.5rem;
+        }
+
+        &__value {
+          font-size: 20px;
+          line-height: 28px;
+
+          margin-top: 1.5rem;
+        }
+      }
+    }
+  }
+}
+
+// --------------------------------------------------------------------------
+// Media max-width: 425px -- End
+// --------------------------------------------------------------------------

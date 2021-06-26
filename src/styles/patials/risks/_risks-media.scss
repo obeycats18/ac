@@ -42,8 +42,11 @@
     padding-bottom: 0;
     background: linear-gradient(103.85deg, #1f1f21 -2.84%, #3c3c41 102.13%);
     &__container {
-      padding: 0;
+      padding-bottom: 0;
       padding-top: 2.5rem;
+      padding-left: $mobile-padding;
+      padding-right: $mobile-padding;
+
       background: none;
     }
 

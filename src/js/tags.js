@@ -1,5 +1,6 @@
 export const tags = (onSelectHandler) => {
   const tagsEl = document.querySelectorAll('[data-el="tag"]');
+  const field = document.querySelector(".select__input-value");
 
   const unselect = (tag) => {
     if (!tag) return;
@@ -11,6 +12,12 @@ export const tags = (onSelectHandler) => {
     if (!tag) return;
     const name = tag.dataset.name;
     const value = tag.innerText;
+
+    if (!field) {
+      return;
+    }
+
+    field.innerText = value;
 
     tagsEl.forEach((t) => unselect(t));
 

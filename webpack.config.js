@@ -71,7 +71,15 @@ const cssLoaders = (extra) => {
 const setupPlugins = () => {
   let defaultPlugins = [
     new HtmlWebpackPlugin({
+      filename: "index.html",
       template: "./index.html",
+      minify: {
+        collapseWhitespace: isProduction,
+      },
+    }),
+    new HtmlWebpackPlugin({
+      filename: "checkout.html",
+      template: "./checkout.html",
       minify: {
         collapseWhitespace: isProduction,
       },

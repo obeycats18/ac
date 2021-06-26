@@ -127,8 +127,10 @@
   // --------------------------------------------------------------------------
 
   .container {
-    max-width: $mobile-container;
-    margin: 0 $mobile-padding;
+    width: 100%;
+    padding: 0 $mobile-padding;
+    max-width: none;
+    margin: 0;
   }
 
   // --------------------------------------------------------------------------

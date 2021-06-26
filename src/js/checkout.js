@@ -12,8 +12,14 @@ export const checkout = () => {
   const form = document.querySelector("#js-checkout-form");
   const inputs = Array.from(form.querySelectorAll("input"));
 
-  const calendar = new Calendar({
+  new Calendar({
     onSelect: ({ date }) => {
+      const opened = document.querySelector(".select__dropdown--active");
+
+      if (opened) {
+        opened.classList.remove("select__dropdown--active");
+      }
+
       onSelectHandler(date, "date");
     },
   });
@@ -34,8 +40,27 @@ export const checkout = () => {
     const filledInputs = inputs.filter((input) => input.getAttribute("value"));
 
     if (filledInputs.length === inputs.length) {
+      saveToStorage(filledInputs);
+
       gsap.to(window, { duration: 1, scrollTo: "#js-section-program" });
     }
+  };
+
+  const saveToStorage = (inputs) => {
+    if (!inputs) {
+      return;
+    }
+
+    const values = inputs.reduce((acc, input) => {
+      const name = input.getAttribute("name");
+      const value = input.getAttribute("value");
+
+      acc[name] = value;
+
+      return acc;
+    }, {});
+
+    window.localStorage.setItem("form", JSON.stringify(values));
   };
 
   select(onSelectHandler);

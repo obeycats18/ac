@@ -20,14 +20,18 @@
   // --------------------------------------------------------------------------
 
   .faq-list {
+    &__item--active.faq-list__item {
+      padding-bottom: 24px;
+    }
     &__item--active {
       .faq-list__item--visible {
         .question {
+          padding-bottom: 24px;
+
           color: $accent-color;
         }
       }
       .faq-list__item--hidden {
-        margin-top: 1.5rem;
         opacity: 1;
         z-index: 1;
         .answer {
@@ -41,11 +45,12 @@
     }
     &__item {
       align-items: center;
-      padding: 32px 0;
 
-      border: 1px solid #f0f0f0;
-      border-right: none;
-      border-left: none;
+      border-bottom: 1px solid #f0f0f0;
+
+      &:first-child {
+        border-top: 1px solid #f0f0f0;
+      }
 
       &:hover {
         cursor: pointer;
@@ -55,6 +60,8 @@
       }
 
       .question {
+        padding: 32px 0;
+
         color: $text-color;
 
         transition: color 0.25s ease;

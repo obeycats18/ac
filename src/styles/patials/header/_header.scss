@@ -1,10 +1,33 @@
+body#checkout {
+  .header {
+    border-bottom: 1px solid #f0f0f0;
+
+    &__back {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      svg {
+        margin-right: 0.25rem;
+      }
+    }
+  }
+}
+
 .header {
   position: relative;
 
-  padding: 88px 0;
-  &__top-line {
-    margin-bottom: 2rem;
+  padding: 2.5rem 0;
+
+  .col-2,
+  .col-6 {
+    padding-left: 0;
+    padding-right: 0;
   }
+
+  &__promo {
+    padding-top: 4rem;
+  }
+
   &__logo {
     display: block;
     width: 100%;

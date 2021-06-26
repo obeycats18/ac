@@ -4,6 +4,11 @@
   margin-top: 5rem;
   padding-bottom: 7.5rem;
 
+  .col-5 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
   &__container {
     padding: 5rem 0;
 
@@ -23,6 +28,7 @@
     img {
       position: absolute;
       top: -2.9%;
+      right: 240px;
     }
   }
 

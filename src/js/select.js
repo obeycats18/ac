@@ -9,6 +9,20 @@ export const select = (onSelectHandler) => {
   const toggleOpenedDropdown = (dropdown, arrow) => {
     if (!dropdown) return;
 
+    const openedDropdowns = document.querySelectorAll(
+      ".select__dropdown--active"
+    );
+
+    if (!openedDropdowns) {
+      return;
+    }
+
+    openedDropdowns.forEach((openedDropdown) => {
+      if (openedDropdown !== dropdown) {
+        closeDropdown(openedDropdown);
+      }
+    });
+
     const opened = isDropdownOpened(dropdown);
 
     if (opened) {

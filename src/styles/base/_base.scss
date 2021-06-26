@@ -19,7 +19,7 @@
 .content__headline--h2 {
   font-weight: $h1-fw;
   font-size: $h2-fs;
-  line-height: 2.25rem;
+  line-height: 2rem;
 
   &_main {
     color: $text-color;
@@ -92,6 +92,10 @@
   }
 
   &--gray {
+    color: $gray-text-color;
+  }
+
+  &--light-gray {
     color: $gray-text-color;
   }
 }

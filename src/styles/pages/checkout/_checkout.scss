@@ -1,0 +1,113 @@
+.page-checkout {
+  padding-top: 56px;
+  padding-bottom: 88px;
+
+  .section-title {
+    max-width: 350px;
+
+    margin-bottom: 0.5rem;
+  }
+
+  .section-description {
+    max-width: 360px;
+    margin-bottom: 1.5rem;
+  }
+
+  .col-6,
+  .col-4 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  // --------------------------------------------------------------------------
+  // Checkout Form
+  // --------------------------------------------------------------------------
+
+  &__form {
+    .field {
+      margin-bottom: 1rem;
+      &:last-child {
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    .field--checkbox {
+      padding-left: 1.75rem;
+      margin-bottom: 0.5rem;
+
+      .link {
+        position: relative;
+
+        color: $accent-color;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .button-checkout {
+    margin: 1rem 0;
+  }
+
+  .button-checkout,
+  .button-add {
+    max-width: none;
+    width: 100%;
+  }
+
+  // --------------------------------------------------------------------------
+  // Visitors List
+  // --------------------------------------------------------------------------
+
+  .visitors {
+    &__item {
+      &-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  // --------------------------------------------------------------------------
+  // Checkout Price Block
+  // --------------------------------------------------------------------------
+
+  .price-block {
+    height: 440px;
+
+    padding: 2rem 1.5rem;
+
+    background: #ffffff;
+    box-shadow: $program-shadow;
+    border-radius: $input-br;
+
+    &__title {
+      margin-bottom: 2rem;
+    }
+
+    &__value {
+      margin-top: 4rem;
+    }
+
+    &__options {
+      &-item {
+        display: flex;
+        align-items: flex-start;
+
+        margin-bottom: 0.5rem;
+
+        &:last-child {
+          max-width: 230px;
+        }
+
+        p {
+          margin-left: 0.5rem;
+        }
+      }
+    }
+  }
+}
+
+@import "./checkout-media";

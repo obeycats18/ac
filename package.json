@@ -41,6 +41,7 @@
     "babel-loader": "^8.2.2",
     "cross-env": "^7.0.2",
     "date-fns": "^2.22.1",
+    "gh-pages": "^3.2.2",
     "gsap": "^3.6.1",
     "lodash.flatten": "^4.4.0"
   }
