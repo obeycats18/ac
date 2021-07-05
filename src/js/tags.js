@@ -23,6 +23,25 @@ export const tags = (onSelectHandler) => {
 
     if (onSelectHandler) {
       onSelectHandler(value, name);
+
+      const dropdownItems = document.querySelectorAll(
+        '[data-el="dropdown-item"]'
+      );
+      const checkboxes = document.querySelectorAll(
+        '[data-el="select-checkbox"]'
+      );
+
+      checkboxes.forEach((checkbox) =>
+        checkbox.classList.remove("select__checkbox--active")
+      );
+
+      dropdownItems.forEach((item) => {
+        const checkbox = item.querySelector('[data-el="select-checkbox"]');
+
+        if (item.innerText.trim() === value) {
+          checkbox.classList.add("select__checkbox--active");
+        }
+      });
     }
 
     return tag.classList.add("tag--active");

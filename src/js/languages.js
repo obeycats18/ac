@@ -12,6 +12,10 @@ export const languages = () => {
     valueEl.innerText = value;
   };
 
+  const isOpened = () => {
+    return containerEl.classList.contains("languages--opened");
+  };
+
   const open = () => {
     containerEl.classList.add("languages--opened");
   };
@@ -32,7 +36,11 @@ export const languages = () => {
   };
 
   inputEl.addEventListener("click", () => {
-    open();
+    if (isOpened()) {
+      close();
+    } else {
+      open();
+    }
   });
 
   itemsEl.forEach((item) => {

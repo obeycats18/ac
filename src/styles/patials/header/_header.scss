@@ -5,6 +5,8 @@ body#checkout {
     &__back {
       display: flex;
       align-items: center;
+      justify-content: flex-end;
+
       cursor: pointer;
       svg {
         margin-right: 0.25rem;
@@ -22,6 +24,43 @@ body#checkout {
   .col-6 {
     padding-left: 0;
     padding-right: 0;
+  }
+
+  &-link {
+    &:hover {
+      .header-link__icon {
+        &::before {
+          width: 2px;
+        }
+
+        svg {
+          transform: translateX(1px);
+        }
+      }
+    }
+
+    &__icon {
+      position: relative;
+
+      display: flex;
+      align-items: center;
+
+      margin-left: 0.5rem;
+
+      &::before {
+        content: "";
+
+        position: absolute;
+        left: 0;
+
+        width: 0;
+        height: 2px;
+
+        background-color: $accent-color;
+
+        transition: width 0.25s ease;
+      }
+    }
   }
 
   &__promo {

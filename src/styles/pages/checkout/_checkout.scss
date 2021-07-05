@@ -6,6 +6,9 @@
     max-width: 350px;
 
     margin-bottom: 0.5rem;
+
+    font-size: 1.5rem;
+    line-height: 32px;
   }
 
   .section-description {
@@ -77,6 +80,9 @@
   .price-block {
     height: 440px;
 
+    position: sticky;
+    top: 0;
+
     padding: 2rem 1.5rem;
 
     background: #ffffff;
@@ -85,10 +91,16 @@
 
     &__title {
       margin-bottom: 2rem;
+
+      font-size: 1.5rem;
+      line-height: 32px;
     }
 
     &__value {
       margin-top: 4rem;
+
+      font-size: 1.5rem;
+      line-height: 32px;
     }
 
     &__options {

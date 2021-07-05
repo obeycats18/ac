@@ -121,7 +121,7 @@ export class Form {
       return;
     }
 
-    const { program, count, date, country } = form;
+    const { program, date, country } = form;
 
     this._calculatePrice();
 
@@ -288,6 +288,8 @@ export class Form {
                     stroke-linejoin="round"
                 />
             </svg>
+
+            <span class="content__caption content__caption--accent error-text">Заповніть обов’язкове поле "${placeholder}"</span>
         </div>
     `;
 
@@ -313,6 +315,24 @@ export class Form {
 
       headline.innerText = `${this._countToText(id)} подорожуючий`;
     });
+  }
+
+  _isEmpty(value) {
+    return !value.length;
+  }
+
+  _validateOne(input) {
+    if (!input) return;
+
+    const value = input.value;
+
+    return !this._isEmpty(value);
+  }
+
+  _validateMany(inputs) {
+    if (!inputs) return;
+
+    return Array.from(inputs).filter((input) => !this._validateOne(input));
   }
 
   /**
@@ -362,11 +382,12 @@ export class Form {
 
     fields.forEach((field) => {
       field.addEventListener("input", (event) => {
-        const value = event.target.value;
+        const input = event.target;
 
-        field.setAttribute("value", value);
+        field.setAttribute("value", input.value);
+        const isValid = this._validateOne(input);
 
-        if (!value.length) {
+        if (!isValid) {
           field.parentNode.classList.add("field--error");
         } else {
           field.parentNode.classList.remove("field--error");
@@ -394,7 +415,16 @@ export class Form {
       event.preventDefault();
 
       const fields = document.querySelectorAll(".field__input");
-      const filledFields = document.querySelectorAll(".field--success");
+
+      const notValidInputs = this._validateMany(fields);
+
+      if (notValidInputs.length) {
+        notValidInputs.forEach((input) => {
+          input.parentNode.classList.add("field--error");
+        });
+
+        return;
+      }
 
       const visitors = [];
       const { country, date, program } = JSON.parse(
@@ -402,14 +432,9 @@ export class Form {
       );
       let payload = {};
 
-      if (fields.length !== filledFields.length) {
-        return;
-      }
-
-      filledFields.forEach((field) => {
-        const input = field.querySelector("input");
-        const name = input.getAttribute("name");
-        const value = input.getAttribute("value");
+      fields.forEach((field) => {
+        const name = field.getAttribute("name");
+        const value = field.getAttribute("value");
 
         visitors.push({ [name]: value });
       });
@@ -426,8 +451,6 @@ export class Form {
           program,
         },
       };
-
-      console.log(payload);
 
       // Send request to server here ...
     });

@@ -9,6 +9,9 @@
 }
 
 .field.field--error {
+  .error-text {
+    display: block;
+  }
   .field__input {
     border: 1px solid $error-input-color;
   }
@@ -20,11 +23,17 @@
 .field {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 
   position: relative;
 
   width: 100%;
-  height: 56px;
+  height: 100%;
+
+  .error-text {
+    display: none;
+    margin-top: 0.5rem;
+  }
 
   .field--success__icon {
     position: absolute;
@@ -37,7 +46,7 @@
 
   &__input {
     width: 100%;
-    height: 100%;
+    height: 56px;
 
     padding: 1rem;
 
@@ -52,7 +61,11 @@
 
     color: $placholder-text-color;
 
-    transition: border 0.25s ease;
+    transition: border 0.25s ease, border 0.25s ease;
+
+    &:hover {
+      border-color: #818182;
+    }
 
     &:focus,
     &:active {
@@ -80,6 +93,12 @@
 
   cursor: pointer;
   user-select: none;
+
+  &:hover {
+    .field--checkbox__checkmark {
+      border-color: #818182;
+    }
+  }
 
   input {
     position: absolute;

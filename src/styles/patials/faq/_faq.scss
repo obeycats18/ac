@@ -20,14 +20,10 @@
   // --------------------------------------------------------------------------
 
   .faq-list {
-    &__item--active.faq-list__item {
-      padding-bottom: 24px;
-    }
     &__item--active {
+      padding-bottom: 24px;
       .faq-list__item--visible {
         .question {
-          padding-bottom: 24px;
-
           color: $accent-color;
         }
       }
